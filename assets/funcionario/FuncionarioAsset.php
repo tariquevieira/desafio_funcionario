@@ -12,4 +12,9 @@ class FuncionarioAsset extends AssetBundle
   public $css = [
     'css/assets.css'
   ];
+  public $js = [
+    'js/funcionario/buscaEndereco.js',
+    'js/commons/services/viaCepService.js',
+    'js/commons/utils/validaCep.js',
+  ];
 }

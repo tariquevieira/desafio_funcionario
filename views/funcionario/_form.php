@@ -15,10 +15,11 @@ use yii\widgets\ActiveForm;
   <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
   <?= $form->field($model, 'cpf')->textInput(['maxlength' => true]) ?>
-
-  <?= $form->field($model, 'lougradouro')->textInput(['maxlength' => true]) ?>
-
   <?= $form->field($model, 'cep')->textInput(['maxlength' => true]) ?>
+
+  <?= Html::tag('button', 'Buscar Cep', ['class' => 'btn btn-primary', 'data-button' => 'buscar-cep']) ?>
+
+  <?= $form->field($model, 'logradouro')->textInput(['maxlength' => true]) ?>
 
   <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
@@ -29,10 +30,10 @@ use yii\widgets\ActiveForm;
   <?= $form->field($model, 'complemento')->textInput(['maxlength' => true]) ?>
 
   <?= $form->field($model, 'cargo_id')
-        ->dropDownList(
-            $cargos,           // Flat array ('id'=>'label')
-            ['prompt' => '']    // options
-        ); ?>
+    ->dropDownList(
+      $cargos,           // Flat array ('id'=>'label')
+      ['prompt' => '']    // options
+    ); ?>
 
   <div class="form-group">
     <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>

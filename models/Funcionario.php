@@ -10,7 +10,7 @@ use Yii;
  * @property int $id
  * @property string $nome
  * @property string $cpf
- * @property string $lougradouro
+ * @property string $logradouro
  * @property string $cep
  * @property string $cidade
  * @property string $estado
@@ -36,11 +36,11 @@ class Funcionario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'cpf', 'lougradouro', 'cep', 'cidade', 'estado', 'numero'], 'required'],
+            [['nome', 'cpf', 'logradouro', 'cep', 'cidade', 'estado', 'numero'], 'required'],
             [['numero', 'cargo_id'], 'integer'],
             [['nome', 'cidade'], 'string', 'max' => 30],
             [['cpf'], 'string', 'max' => 15],
-            [['lougradouro', 'complemento'], 'string', 'max' => 60],
+            [['logradouro', 'complemento'], 'string', 'max' => 60],
             [['cep'], 'string', 'max' => 8],
             [['estado'], 'string', 'max' => 2],
             [['cargo_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cargo::class, 'targetAttribute' => ['cargo_id' => 'id']],
@@ -56,7 +56,7 @@ class Funcionario extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nome' => 'Nome',
             'cpf' => 'Cpf',
-            'lougradouro' => 'Lougradouro',
+            'logradouro' => 'logradouro',
             'cep' => 'Cep',
             'cidade' => 'Cidade',
             'estado' => 'Estado',

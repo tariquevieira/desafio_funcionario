@@ -18,7 +18,7 @@ class FuncionarioSearch extends Funcionario
     {
         return [
             [['id', 'numero', 'cargo_id'], 'integer'],
-            [['nome', 'cpf', 'lougradouro', 'cep', 'cidade', 'estado', 'complemento'], 'safe'],
+            [['nome', 'cpf', 'logradouro', 'cep', 'cidade', 'estado', 'complemento'], 'safe'],
         ];
     }
 
@@ -65,7 +65,7 @@ class FuncionarioSearch extends Funcionario
 
         $query->andFilterWhere(['like', 'nome', $this->nome])
             ->andFilterWhere(['like', 'cpf', $this->cpf])
-            ->andFilterWhere(['like', 'lougradouro', $this->lougradouro])
+            ->andFilterWhere(['like', 'logradouro', $this->logradouro])
             ->andFilterWhere(['like', 'cep', $this->cep])
             ->andFilterWhere(['like', 'cidade', $this->cidade])
             ->andFilterWhere(['like', 'estado', $this->estado])

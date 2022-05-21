@@ -21,29 +21,29 @@ FuncionarioAsset::register($this);
     <p>
       <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
       <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
-                'data' => [
-                    'confirm' => 'Are you sure you want to delete this item?',
-                    'method' => 'post',
-                ],
-            ]) ?>
+        'class' => 'btn btn-danger',
+        'data' => [
+          'confirm' => 'Are you sure you want to delete this item?',
+          'method' => 'post',
+        ],
+      ]) ?>
     </p>
 
     <?= DetailView::widget([
-            'model' => $model,
-            'attributes' => [
-                'id',
-                'nome',
-                'cpf',
-                'lougradouro',
-                'cep',
-                'cidade',
-                'estado',
-                'numero',
-                'complemento',
-                'cargo_id',
-            ],
-        ]) ?>
+      'model' => $model,
+      'attributes' => [
+        'id',
+        'nome',
+        'cpf',
+        'logradouro',
+        'cep',
+        'cidade',
+        'estado',
+        'numero',
+        'complemento',
+        'cargo_id',
+      ],
+    ]) ?>
 
 
   </div>

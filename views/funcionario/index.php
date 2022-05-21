@@ -35,7 +35,7 @@ FuncionarioAsset::register($this);
         'id',
         'nome',
         'cpf',
-        //'lougradouro',
+        //'logradouro',
         //'cep',
         //'cidade',
         //'estado',

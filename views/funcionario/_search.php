@@ -21,19 +21,24 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cpf') ?>
 
-    <?= $form->field($model, 'lougradouro') ?>
+    <?= $form->field($model, 'logradouro') ?>
 
     <?= $form->field($model, 'cep') ?>
 
-    <?php // echo $form->field($model, 'cidade') ?>
+    <?php // echo $form->field($model, 'cidade') 
+    ?>
 
-    <?php // echo $form->field($model, 'estado') ?>
+    <?php // echo $form->field($model, 'estado') 
+    ?>
 
-    <?php // echo $form->field($model, 'numero') ?>
+    <?php // echo $form->field($model, 'numero') 
+    ?>
 
-    <?php // echo $form->field($model, 'complemento') ?>
+    <?php // echo $form->field($model, 'complemento') 
+    ?>
 
-    <?php // echo $form->field($model, 'cargo_id') ?>
+    <?php // echo $form->field($model, 'cargo_id') 
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
