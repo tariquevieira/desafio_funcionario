@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Funcionario */
 
-$this->title = 'Novo Funcionario';
+$this->title = 'Novo Funcionário';
 $this->params['breadcrumbs'][] = ['label' => 'Funcionarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 FuncionarioAsset::register($this);
@@ -18,12 +18,9 @@ FuncionarioAsset::register($this);
   <div class="card funcionario-card">
     <?= $this->render('_form', [
             'model' => $model,
-            'cargos' => $cargos,
+            'cargos' => $cargos
         ]) ?>
 
-    <?php
-        var_dump("cargos começa aqui:");
-        var_dump($cargos) ?>
   </div>
 
 

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Funcionario */
 
-$this->title = 'Visualizar funcionaro: ' . $model->id;
+$this->title = "Visualizar funcionário: " . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Funcionarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -35,9 +35,18 @@ FuncionarioAsset::register($this);
                 'id',
                 'nome',
                 'cpf',
+                'lougradouro',
+                'cep',
+                'cidade',
+                'estado',
+                'numero',
+                'complemento',
                 'cargo_id',
             ],
         ]) ?>
 
+
   </div>
+
+
 </div>

@@ -3,14 +3,13 @@
 use app\assets\funcionario\FuncionarioAsset;
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Funcionario */
 
-$this->title = 'Atualiza Funcionario: ' . $model->id;
+$this->title = 'Update Funcionario: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Funcionarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = 'Update';
 FuncionarioAsset::register($this);
 ?>
 <div class="funcionario-update">
@@ -19,7 +18,10 @@ FuncionarioAsset::register($this);
   <hr>
   <div class="card funcionario-card">
     <?= $this->render('_form', [
-            'model' => $model,
-        ]) ?>
+      'model' => $model,
+      'cargos' => $cargos
+    ]) ?>
   </div>
+
+
 </div>

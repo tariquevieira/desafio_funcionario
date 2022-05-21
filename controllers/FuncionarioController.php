@@ -2,7 +2,6 @@
 
 namespace app\controllers;
 
-
 use app\models\Funcionario;
 use app\models\FuncionarioSearch;
 use app\services\cargo\CargoService;
@@ -24,7 +23,7 @@ class FuncionarioController extends Controller
             parent::behaviors(),
             [
                 'verbs' => [
-                    'class' => VerbFilter::class,
+                    'class' => VerbFilter::className(),
                     'actions' => [
                         'delete' => ['POST'],
                     ],
@@ -78,8 +77,8 @@ class FuncionarioController extends Controller
         } else {
             $model->loadDefaultValues();
         }
-        $cargos = CargoService::cargoArray();
 
+        $cargos = CargoService::cargoArray();
 
         return $this->render('create', [
             'model' => $model,
@@ -101,9 +100,11 @@ class FuncionarioController extends Controller
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
+        $cargos = CargoService::cargoArray();
 
         return $this->render('update', [
             'model' => $model,
+            'cargos' => $cargos,
         ]);
     }
 

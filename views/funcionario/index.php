@@ -1,20 +1,19 @@
 <?php
 
+use app\assets\funcionario\FuncionarioAsset;
 use app\models\Funcionario;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use app\assets\funcionario\FuncionarioAsset;
-
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\FuncionarioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Funcionários';
+$this->title = 'Funcionarios';
 $this->params['breadcrumbs'][] = $this->title;
-FuncionarioAsset::register($this)
+FuncionarioAsset::register($this);
 ?>
 <div class="funcionario-index">
 
@@ -23,20 +22,26 @@ FuncionarioAsset::register($this)
   <p>
     <?= Html::a('Novo Funcionário', ['create'], ['class' => 'btn btn-success']) ?>
   </p>
-  <div class="card funcionario-card">
-    <?php // echo $this->render('_search', ['model' => $searchModel]); 
-    ?>
 
+  <?php // echo $this->render('_search', ['model' => $searchModel]); 
+  ?>
+  <div class="card funcionario-card">
     <?= GridView::widget([
       'dataProvider' => $dataProvider,
       'filterModel' => $searchModel,
       'columns' => [
-        ['class' =>  'yii\grid\SerialColumn'],
+        ['class' => 'yii\grid\SerialColumn'],
 
         'id',
         'nome',
         'cpf',
-        'cargo_id',
+        //'lougradouro',
+        //'cep',
+        //'cidade',
+        //'estado',
+        //'numero',
+        //'complemento',
+        //'cargo_id',
         [
           'class' => ActionColumn::class,
           'urlCreator' => function ($action, Funcionario $model, $key, $index, $column) {
@@ -45,9 +50,8 @@ FuncionarioAsset::register($this)
         ],
       ],
     ]); ?>
-
-  </div>
-
+    <div>
 
 
-</div>
+
+    </div>
