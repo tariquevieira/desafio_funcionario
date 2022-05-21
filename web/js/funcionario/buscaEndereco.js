@@ -1,9 +1,3 @@
-const desabilitarCampos = (idArray) => {
-    idArray.forEach((id) => {
-        document.getElementById(id).disabled = true;
-    });
-};
-
 const limparCampos = (idArray) => {
     idArray.forEach((id) => {
         document.getElementById(id).value = '';
@@ -39,7 +33,7 @@ const handleEndereco = () => {
             'funcionario-cidade',
             'funcionario-estado',
         ];
-        desabilitarCampos(idArray);
+
         limparCampos(idArray);
         const dados = await buscaEmViaCep(cep);
         preencherCampos(dados, idArray);

@@ -40,6 +40,7 @@ class Funcionario extends \yii\db\ActiveRecord
             [['numero', 'cargo_id'], 'integer'],
             [['nome', 'cidade'], 'string', 'max' => 30],
             [['cpf'], 'string', 'max' => 15],
+            [['cpf'], 'validaCpf'],
             [['logradouro', 'complemento'], 'string', 'max' => 60],
             [['cep'], 'string', 'max' => 8],
             [['estado'], 'string', 'max' => 2],
@@ -74,5 +75,19 @@ class Funcionario extends \yii\db\ActiveRecord
     public function getCargo()
     {
         return $this->hasOne(Cargo::class, ['id' => 'cargo_id']);
+    }
+
+    public function validaCPF()
+    {
+
+        $flag = true;
+
+        $cpf = $this->cpf;
+        $document = new \Bissolli\ValidadorCpfCnpj\CPF($cpf);
+
+        if (!$document->isValid()) {
+
+            $this->addError('cpf', 'CPF inválido.');
+        }
     }
 }

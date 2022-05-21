@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+
 use app\models\Funcionario;
 use app\models\FuncionarioSearch;
 use app\services\cargo\CargoService;
@@ -23,11 +24,12 @@ class FuncionarioController extends Controller
             parent::behaviors(),
             [
                 'verbs' => [
-                    'class' => VerbFilter::className(),
+                    'class' => VerbFilter::class,
                     'actions' => [
                         'delete' => ['POST'],
                     ],
                 ],
+
             ]
         );
     }
